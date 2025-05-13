@@ -47,7 +47,11 @@ const User = ({userPromise}) => {
       })
       .then(res=>res.json())
       .then(data=>{
-        console.log(data)
+        if(data.deletedCount){
+            const remainingUsers = users.filter(user=>user._id !== id)
+            setUsers(remainingUsers)
+            console.log(data)
+        }
       })
     }
 
