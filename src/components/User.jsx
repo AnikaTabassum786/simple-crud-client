@@ -70,6 +70,9 @@ const User = ({userPromise}) => {
                         <div key={user._id} >
                           <p>{user.name}:{user.email}</p>
                           <Link to={`/users/${user._id}`}>Details</Link>
+                          <div>
+                            <Link to={`/update/${user._id}`}>Edit</Link>
+                          </div>
                           <button onClick={()=>handleDelete(user._id)} className='btn'>X</button>
                         </div>
                     )
